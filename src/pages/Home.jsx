@@ -1757,7 +1757,7 @@ console.log('slide', slide);
             </div>
           </div>
 
-          <img src={Image9} className="explore__card2" />
+          <img src={Image9} className="explore__card2" alt="" />
         </div>
 
         <div className="exploreMain">
