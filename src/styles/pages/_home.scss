@@ -141,6 +141,8 @@ body {
     }
 
     &__hamburger-active {
+      position: fixed;
+      right: 20px;
       .nft-main__header__hamburger__hamburger1 {
         width: 35px;
         height: 2px;
@@ -160,41 +162,9 @@ body {
       }
     }
 
-    &__sidebar {
-      width: 100%;
-      height: 100vh;
-      position: fixed;
-      background: #6A0BE7;
-      top: 0;
-      left: 0;
-      z-index: 4;
-      padding: 40px;
-      padding-top: 140px;
-      font-size: 6rem;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      transition: 0.7s;
+    
 
-      &__button {
-        background: #FFF;
-        border: none;
-        outline: none;
-        width: 200px;
-        height: 48px;
-        border-radius: 15px;
-        font-size: 16px;
-        font-weight: 700;
-        color: #6A0BE7;
-  
-       
-      }
-    }
-
-    &__sidebar-none {
-      opacity: 0;
-      z-index: -1;
-    }
+    
   }
 
   &__hero {
@@ -202,62 +172,69 @@ body {
     max-width: 1440px;
     margin: auto;
     height: 959px;
-    &__title {
-      font-size: 5rem;
-      font-weight: 700;
-      font-family: "Space Grotesk";
-      text-align: center;
-      margin-bottom: 2rem;
-      line-height: 44.45px;
-
-      @media (max-width: 565px) {
-        font-size: 30px;
-      }
-    }
-
-    &__subtitle {
-      font-weight: 1.6rem;
-      font-weight: 500;
-      width: 64ch;
-      margin: auto;
-      margin-bottom: 4rem;
-      text-align: center;
-      line-height: 19.5px;
-
-      @media (max-width: 565px) {
-        padding: 20px;
-        width: fit-content;
-        font-size: 16px;
-      }
-    }
-
-    &__button-group {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      justify-content: center;
-
-      button {
-        width: 155px;
-        height: 49px;
-        border-radius: 15px;
-        background: rgba(113, 12, 246, 1);
-        border: none;
-        outline: none;
-        font-size: 1.6rem;
+// position: relative;
+    &__inner {
+      position: absolute;
+      top: 195px;
+      left: 50%;
+      transform: translateX(-50%);
+      &__title {
+        font-size: 5rem;
         font-weight: 700;
-
+        font-family: "Space Grotesk";
+        text-align: center;
+        margin-bottom: 2rem;
+        line-height: 44.45px;
+  
         @media (max-width: 565px) {
-          font-size: 14px;
+          font-size: 30px;
         }
       }
-
-      & > :last-child {
-        width: 183px;
-        background: transparent;
-        border: 2px solid rgba(113, 12, 246, 1);
+  
+      &__subtitle {
+        font-weight: 1.6rem;
+        font-weight: 500;
+        width: 64ch;
+        margin: auto;
+        margin-bottom: 4rem;
+        text-align: center;
+        line-height: 19.5px;
+  
+        @media (max-width: 565px) {
+          width: 100%;
+          font-size: 16px;
+        }
+      }
+  
+      &__button-group {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        justify-content: center;
+  
+        button {
+          width: 155px;
+          height: 49px;
+          border-radius: 15px;
+          background: rgba(113, 12, 246, 1);
+          border: none;
+          outline: none;
+          font-size: 1.6rem;
+          font-weight: 700;
+  
+          @media (max-width: 565px) {
+            font-size: 14px;
+          }
+        }
+  
+        & > :last-child {
+          width: 183px;
+          background: transparent;
+          border: 2px solid rgba(113, 12, 246, 1);
+        }
       }
     }
+    
 
     &__spot-light {
       width: 100%;
@@ -266,7 +243,7 @@ body {
       background-position: center;
       background-size: cover;
       margin: auto;
-      margin-top: -40px;
+      margin-top: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -274,7 +251,12 @@ body {
 
       &__torch-group {
         position: absolute;
-        // animation: flash 4s linear infinite;
+        animation: flash 4s linear infinite;
+        
+        @media (max-width: 565px) {
+          animation: unset;
+        }
+
         &__flash-light {
           position: absolute;
           top: 90%;
@@ -875,6 +857,7 @@ body {
 
     @media (max-width: 565px) {
       grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
 
     &__card {
@@ -1086,7 +1069,6 @@ body {
   &__card2 {
     width: 100%;
     height: auto;
-    background: yellow;
   }
 }
 
@@ -1344,6 +1326,42 @@ body {
       font-weight: 400;
     }
   }
+}
+
+.sidebar {
+  width: 100%;
+  height: 100vh;
+  position: fixed !important;
+  background: #6A0BE7;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  padding: 40px;
+  padding-top: 140px;
+  font-size: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  transition: 0.7s;
+
+  &__button {
+    background: #FFF;
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 48px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #6A0BE7;
+
+   
+  }
+}
+
+.sidebar-none {
+  opacity: 0;
+  z-index: -1;
 }
 
 @keyframes draw {
